@@ -1,0 +1,25 @@
+sample,library,date,fastq_R1,notes
+Lib1-230614-VSVG_control_293T,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_VSVG_S37_R1_001.fastq.gz,
+Lib2-230614-VSVG_control_293T,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_VSVG_S38_R1_001.fastq.gz,
+Lib1-230614-no-antibody_control_highACE2,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_S41_R1_001.fastq.gz,
+Lib2-230614-no-antibody_control_highACE2,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_S42_R1_001.fastq.gz,
+Lib1-230614-no-antibody_control_mediumACE2,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_medium_ACE2_0_S23_R1_001.fastq.gz,
+Lib2-230614-no-antibody_control_mediumACE2,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_medium_ACE2_0_S29_R1_001.fastq.gz,
+Lib1-230614-monomeric_ACE2_2.88,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_medium_ACE2_1_S24_R1_001.fastq.gz,used medium ACE2 cells
+Lib1-230614-monomeric_ACE2_8.63,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_medium_ACE2_2_S25_R1_001.fastq.gz,used medium ACE2 cells
+Lib1-230614-monomeric_ACE2_25.9,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_medium_ACE2_3_S26_R1_001.fastq.gz,used medium ACE2 cells
+Lib1-230614-monomeric_ACE2_77.7,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_medium_ACE2_4_S27_R1_001.fastq.gz,used medium ACE2 cells
+Lib1-230614-monomeric_ACE2_233,Lib1,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike1_medium_ACE2_5_S28_R1_001.fastq.gz,used medium ACE2 cells
+Lib2-230614-monomeric_ACE2_2.88,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_medium_ACE2_1_S30_R1_001.fastq.gz,used medium ACE2 cells
+Lib2-230614-monomeric_ACE2_8.63,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_medium_ACE2_2_S31_R1_001.fastq.gz,used medium ACE2 cells
+Lib2-230614-monomeric_ACE2_25.9,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_medium_ACE2_3_S32_R1_001.fastq.gz,used medium ACE2 cells
+Lib2-230614-monomeric_ACE2_77.7,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_medium_ACE2_4_S33_R1_001.fastq.gz,used medium ACE2 cells
+Lib2-230614-monomeric_ACE2_233,Lib2,2023-06-14,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230601_VH00699_320_AAAY223HV/Unaligned/Project_bdadonai/XBB15_Spike2_medium_ACE2_5_S34_R1_001.fastq.gz,used medium ACE2 cells
+Lib1-230815-no-antibody_control_mediumACE2,Lib1,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib1_no_mAb_S37_R1_001.fastq.gz,
+Lib1-230815-mAb-2E7_3.24_mediumACE2,Lib1,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib1_NTD2E7_1_S16_R1_001.fastq.gz,
+Lib1-230815-mAb-2E7_12.96_mediumACE2,Lib1,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib1_NTD2E7_2_S17_R1_001.fastq.gz,
+Lib1-230815-mAb-2E7_51.84_mediumACE2,Lib1,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib1_NTD2E7_3_S18_R1_001.fastq.gz,
+Lib2-230815-mAb-2E7_3.24_mediumACE2,Lib2,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib2_NTD2E7_1_S34_R1_001.fastq.gz,
+Lib2-230815-mAb-2E7_12.96_mediumACE2,Lib2,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib2_NTD2E7_2_S35_R1_001.fastq.gz,
+Lib2-230815-mAb-2E7_51.84_mediumACE2,Lib2,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib2_NTD2E7_3_S36_R1_001.fastq.gz,
+Lib2-230815-no-antibody_control_mediumACE2,Lib2,2023-08-15,/fh/fast/bloom_j/SR/ngs/illumina/bdadonai/230814_VH01189_147_AAC5MLHHV/Unaligned/Project_bdadonai/Lib2_no_mAb_S38_R1_001.fastq.gz,
