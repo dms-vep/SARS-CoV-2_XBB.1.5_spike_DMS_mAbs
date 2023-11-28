@@ -1,9 +1,48 @@
-# Configurations for determining effects of mutations on antibody/sera escape,
-# or escape from neutralization by soluble receptor (which can be used to determine
-# receptor affinity).
+# Configurations for determining effects of mutations on assays such as antibody
+# escape, ACE2 binding from soluble ACE2 neutralization, etc.
+# Note that in the configuration for individual selections, "antibody" is used
+# as a synonym for any treatment (ACE2, heat, etc), and "no-antibody" is
+# used as a synonym for the untreated conditions.
 
 # --------------------------------------------------------------------------------------
-# Configuration for each antibody or soluble receptor selection experiment.
+# Define the selections
+# --------------------------------------------------------------------------------------
+
+# `assays` is keyed by assay (eg, "antibody_escape", "ACE2_binding", etc). Values are:
+#    - `title`: title used for selection in docs
+#    - `selections`: name of key used to define all selections for this assay
+#    - `averages`: name of key used to define averages across selections for this assay.
+#       Leave out this key if not taking averages.
+#    - `prob_escape_scale`: the scale used for the y-axis when plotting prob escape as
+#      a function of concentration. Typically symlog if all values close to zero, linear
+#      otherwise. Should be in the form of keyword arguments to `altair.Scale`.
+#    - `scale_stat`: scale the statistic being estimated for mutation effects by this
+#      number. Typically is 1 (no scaling) unless you want negative values to indicate a
+#      favorable effect (as for soluble ACE2 selections), in which case use -1.
+#    - `stat_name`: name assigned to statistic, eg, "escape" or "ACE2 binding".
+
+assays:
+  antibody_escape:
+    title: Antibody/serum escape
+    selections: antibody_selections
+    averages: avg_antibody_escape
+    prob_escape_scale:
+      type: symlog
+      constant: 0.04
+    scale_stat: 1
+    stat_name: escape
+  ACE2_binding:
+    title: ACE2 binding
+    selections: ACE2_binding_selections
+    averages: avg_ACE2_binding
+    prob_escape_scale:
+      type: linear
+    scale_stat: -1
+    stat_name: ACE2 binding
+
+
+# --------------------------------------------------------------------------------------
+# Configuration for each antibody or soluble ACE2 selection experiment.
 # --------------------------------------------------------------------------------------
 
 # `antibody_selections` is keyed by name of each selection experiment, which includes a
@@ -77,9 +116,9 @@ plot_hide_stats_default: &plot_hide_stats_default
     init: -2
     min_filters:
       times_seen: 3
-  ACE2 affinity:
-    csv: results/receptor_affinity/averages/monomeric_ACE2_mut_effect.csv
-    csv_col: affinity_mean
+  ACE2 binding:
+    csv: results/ACE2_binding/averages/monomeric_ACE2_mut_effect.csv
+    csv_col: ACE2 binding_mean
     init: -3
     min_filters:
       times_seen: 3
@@ -126,14 +165,14 @@ antibody_selections:
 # --------------------------------------------------------------------------------------
 
 
-# Note that for soluble receptor affinity selections, you define selection experiments
-# exactly analogously to `antibody_selections` in `receptor_selections`, using `antibody`
-# as a synonym for the soluble receptor.
+# Note that for soluble ACE2 binding selections, you define selection experiments
+# exactly analogously to `antibody_selections` in `ACE2_selections`, using `antibody`
+# as a synonym for the soluble ACE2.
 
 # Define some defaults slightly different than from antibody selections
 
-# default parameters for `polyclonal` model fitting for receptor affinity
-receptor_polyclonal_params_default: &receptor_polyclonal_params_default
+# default parameters for `polyclonal` model fitting for ACE2 binding
+ACE2_polyclonal_params_default: &ACE2_polyclonal_params_default
   n_epitopes: 1
   spatial_distances: null
   fit_kwargs:  # keyword arguments to `Polyclonal.fit`
@@ -142,8 +181,8 @@ receptor_polyclonal_params_default: &receptor_polyclonal_params_default
     reg_activity_weight: 1.0
     logfreq: 200
 
-# default stats to hide cells on plot of receptor affinity
-receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
+# default stats to hide cells on plot of ACE2 binding
+ACE2_plot_hide_stats_default: &ACE2_plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/293T_high_ACE2_entry_func_effects.csv
     csv_col: effect
@@ -151,14 +190,14 @@ receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
     min_filters:
       times_seen: 3
 
-# Define the receptor selections
-receptor_selections:
+# Define the ACE2 selections
+ACE2_binding_selections:
   Lib1-230614-monomeric_ACE2:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *receptor_polyclonal_params_default
+    polyclonal_params: *ACE2_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *receptor_plot_hide_stats_default
+    plot_hide_stats: *ACE2_plot_hide_stats_default
     no_antibody_sample: Lib1-230614-no-antibody_control_mediumACE2
     antibody_samples:
       Lib1-230614-monomeric_ACE2_2.88:
@@ -179,9 +218,9 @@ receptor_selections:
   Lib2-230614-monomeric_ACE2:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *receptor_polyclonal_params_default
+    polyclonal_params: *ACE2_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *receptor_plot_hide_stats_default
+    plot_hide_stats: *ACE2_plot_hide_stats_default
     no_antibody_sample: Lib2-230614-no-antibody_control_mediumACE2
     antibody_samples:
       Lib2-230614-monomeric_ACE2_2.88:
@@ -201,7 +240,7 @@ receptor_selections:
         use_in_fit: true
 
 # --------------------------------------------------------------------------------------
-# Configuration for averaging/plotting selections for same antibody or soluble receptor
+# Configuration for averaging/plotting selections for same antibody or soluble ACE2
 # --------------------------------------------------------------------------------------
 
 # Average/plot escape values from different selections with the same antibody/serum using
@@ -213,8 +252,8 @@ receptor_selections:
 #   - `title`: title of plots
 #   - `legend`: legend added to plots
 
-# For soluble receptor experiments used to measure receptor affinity, do exactly the same
-# except under the key `avg_receptor_affinity` rather than `avg_antibody_escape`.
+# For soluble ACE2 experiments used to measure ACE2 binding, do exactly the same
+# except under the key `avg_ACE2_binding` rather than `avg_antibody_escape`.
 
 # Define defaults for each antibody/serum, used via the merge (<<) operator
 avg_antibody_escape_default: &avg_antibody_escape_default
@@ -239,23 +278,23 @@ avg_antibody_escape_not_fully_neutralized: &avg_antibody_escape_not_fully_neutra
 
 # Define the antibodies/sera to average
 avg_antibody_escape:
-  mAb_2E7_mediumACE2:
+  mAb_2E7:
     <<: *avg_antibody_escape_not_fully_neutralized
     title: Antibody 2E7 escape in medium ACE2 cells
     selections:
       - Lib1-230815-mAb-2E7_mediumACE2
       - Lib2-230815-mAb-2E7_mediumACE2
 
-# Define the receptor affinity experiments to average
-avg_receptor_affinity_default: &avg_receptor_affinity_default
+# Define the ACE2 binding experiments to average
+avg_ACE2_binding_default: &avg_ACE2_binding_default
   <<: *avg_antibody_escape_default
   icXX: 50  # IC50
 
-avg_receptor_affinity:
+avg_ACE2_binding:
   monomeric_ACE2:
-    <<: *avg_receptor_affinity_default
-    title: Affinity for monomeric ACE2
-    plot_hide_stats: *receptor_plot_hide_stats_default
+    <<: *avg_ACE2_binding_default
+    title: binding for monomeric ACE2
+    plot_hide_stats: *ACE2_plot_hide_stats_default
     selections:
       - Lib1-230614-monomeric_ACE2
       - Lib2-230614-monomeric_ACE2
