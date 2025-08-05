@@ -1,4 +1,4 @@
-# Deep mutational scanning of SARS-CoV-2 XBB.1.5 spike 
+# Escape mutation mapping for 2E7 antibody using SARS-CoV-2 XBB.1.5 spike deep mutational scanning libraries
 Study by Bernadeta Dadonaite and Jesse Bloom.  
 
 This repo contains data for antibody escape mapping experiments using full spike XBB.1.5 libraries.
