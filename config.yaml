@@ -15,13 +15,13 @@ docs: docs
 # ----------------------------------------------------------------------------
 
 # Name of your main GitHub repo, eg https://github.com/<my_organization>/<my_repo>
-github_repo_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS
+github_repo_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS_mAbs
 # GitHub blob path to where results files are stored. Typically "{repo}/blob/{branch}",
 # the "test_example" below is specific to this test example being within the pipeline
 # and should not be needed for other pipelines.
-github_blob_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS/blob/master
+github_blob_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS_mAbs/blob/master
 # Some descriptions and metadata about the analysis.
-description: Deep mutational scanning of SARS-CoV-2 XBB.1.5 spike using a barcoded lentiviral platform
+description: Escape mapping for R568-2E7 antibody using SARS-CoV-2 XBB.1.5 spike pseudovirus-based deep mutational scanning
 year: 2025
 authors: Bernadeta Dadonaite and Jesse Bloom
 
