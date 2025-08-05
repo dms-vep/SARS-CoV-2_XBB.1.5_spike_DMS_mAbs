@@ -221,7 +221,7 @@ avg_antibody_escape_not_fully_neutralized: &avg_antibody_escape_not_fully_neutra
 
 # Define the antibodies/sera to average
 avg_antibody_escape:
-  mAb_2E7:
+  R568_2E7:
     <<: *avg_antibody_escape_not_fully_neutralized
     title: Antibody 2E7 escape in medium ACE2 cells
     selections:

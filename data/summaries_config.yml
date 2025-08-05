@@ -58,7 +58,7 @@ antibody_escape:
       le_filters:
         escape_std: 1
       antibody_list:  # antibodies to include and their CSVs
-        mAb_2E7: results/antibody_escape/averages/mAb_2E7_mut_effect.csv
+        R568_2E7: results/antibody_escape/averages/R568_2E7_mut_effect.csv
   other_phenotypes:
     spike mediated entry:
       csv: data/293T_high_ACE2_entry_func_effects.csv
