@@ -34,3 +34,7 @@ results/antibody_escape/averages/*
 !results/escape_logos
 results/escape_logos/*
 !results/escape_logos/*.svg
+
+!results/dms-viz
+results/dms-viz/*
+!results/dms-viz/*.json

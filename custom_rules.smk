@@ -74,7 +74,7 @@ rule configure_dms_viz_R568_2E7:
 docs["Additional files and plots"] = {
     "Reference to sequential site-numbering map": config["site_numbering_map"],
     "Structure data": {
-        "JSON for dms-viz vizualization": rules.configure_dms_viz_R568_2E7.output.dms_viz_json,
+        "JSON for dms-viz visualization": rules.configure_dms_viz_R568_2E7.output.dms_viz_json,
             }
 }
 

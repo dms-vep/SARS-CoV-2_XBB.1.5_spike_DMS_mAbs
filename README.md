@@ -1,7 +1,7 @@
-# Escape mutation mapping for 2E7 antibody using SARS-CoV-2 XBB.1.5 spike deep mutational scanning libraries
+# Escape mutation mapping for R568-2E7 antibody using SARS-CoV-2 XBB.1.5 spike deep mutational scanning libraries
 Study by Bernadeta Dadonaite and Jesse Bloom.  
 
-This repo contains data for antibody escape mapping experiments using full spike XBB.1.5 libraries.
+This repo contains data for R568-2E7 antibody escape mapping experiments using full spike XBB.1.5 libraries.
 For documentation of the analysis, see [https://dms-vep.github.io/SARS-CoV-2_XBB.1.5_spike_DMS_mAbs/](https://dms-vep.github.io/SARS-CoV-2_XBB.1.5_spike_DMS_mAbs/)
 
 ## Organization of this repo
