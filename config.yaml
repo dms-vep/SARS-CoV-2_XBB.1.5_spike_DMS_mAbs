@@ -19,10 +19,10 @@ github_repo_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS
 # GitHub blob path to where results files are stored. Typically "{repo}/blob/{branch}",
 # the "test_example" below is specific to this test example being within the pipeline
 # and should not be needed for other pipelines.
-github_blob_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS/blob/main
+github_blob_url: https://github.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS/blob/master
 # Some descriptions and metadata about the analysis.
 description: Deep mutational scanning of SARS-CoV-2 XBB.1.5 spike using a barcoded lentiviral platform
-year: 2023
+year: 2025
 authors: Bernadeta Dadonaite and Jesse Bloom
 
 # ----------------------------------------------------------------------------
@@ -63,8 +63,8 @@ neut_standard_barcodes: data/neutralization_standard_barcodes.csv
 # gene (codon) sequence (beginning with "http" or "ftp") or just path to file.
 # If these next two variables are "null" instead, then the variants are built
 # from scratch using parameters below.
-prebuilt_variants: null
-prebuilt_geneseq: null
+prebuilt_variants: https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS/main/results/variants/codon_variants.csv
+prebuilt_geneseq: https://raw.githubusercontent.com/dms-vep/SARS-CoV-2_XBB.1.5_spike_DMS/main/results/gene_sequence/codon.fasta
 
 # Parameters for building variants from PacBio sequencing, only needed if
 # not using pre-built variants.
@@ -116,6 +116,6 @@ illumina_barcode_parser_params:
 # For each variable, set to "null" or just don't provide if you aren't doing that type
 # of analysis. Otherwise provide path to configuration for that analysis.
 
-func_effects_config: data/func_effects_config.yml  # Functional effects of mutations
+func_effects_config: null  # Functional effects of mutations
 antibody_escape_config: data/antibody_escape_config.yml  # Antibody/serum escape
 summaries_config: data/summaries_config.yml  # Summaries across assays

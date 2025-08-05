@@ -1,5 +1,5 @@
 #!/bin/bash
 #
-#SBATCH -c 16
+#SBATCH -c 8
 
-snakemake -j 16 --rerun-incomplete --use-conda -s dms-vep-pipeline-3/Snakefile
+snakemake -j 8 --rerun-incomplete --use-conda -s dms-vep-pipeline-3/Snakefile

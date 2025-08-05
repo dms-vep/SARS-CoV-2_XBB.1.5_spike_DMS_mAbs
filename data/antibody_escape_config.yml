@@ -31,15 +31,6 @@ assays:
       constant: 0.04
     scale_stat: 1
     stat_name: escape
-  ACE2_binding:
-    title: ACE2 binding
-    selections: ACE2_binding_selections
-    averages: avg_ACE2_binding
-    prob_escape_scale:
-      type: linear
-    scale_stat: -1
-    stat_name: ACE2 binding
-
 
 # --------------------------------------------------------------------------------------
 # Configuration for each antibody or soluble ACE2 selection experiment.
@@ -111,13 +102,13 @@ escape_plot_kwargs_default: &escape_plot_kwargs_default
 #   - `init`: initial value of slider
 plot_hide_stats_default: &plot_hide_stats_default
   functional effect:
-    csv: results/func_effects/averages/293T_high_ACE2_entry_func_effects.csv
+    csv: data/293T_high_ACE2_entry_func_effects.csv
     csv_col: effect
     init: -2
     min_filters:
       times_seen: 3
   ACE2 binding:
-    csv: results/ACE2_binding/averages/monomeric_ACE2_mut_effect.csv
+    csv: data/monomeric_ACE2_mut_effect.csv
     csv_col: ACE2 binding_mean
     init: -3
     min_filters:
@@ -190,54 +181,6 @@ ACE2_plot_hide_stats_default: &ACE2_plot_hide_stats_default
     min_filters:
       times_seen: 3
 
-# Define the ACE2 selections
-ACE2_binding_selections:
-  Lib1-230614-monomeric_ACE2:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *ACE2_polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *ACE2_plot_hide_stats_default
-    no_antibody_sample: Lib1-230614-no-antibody_control_mediumACE2
-    antibody_samples:
-      Lib1-230614-monomeric_ACE2_2.88:
-        concentration: 2.88
-        use_in_fit: true
-      Lib1-230614-monomeric_ACE2_8.63:
-        concentration: 8.63
-        use_in_fit: true
-      Lib1-230614-monomeric_ACE2_25.9:
-        concentration: 25.9
-        use_in_fit: true
-      Lib1-230614-monomeric_ACE2_77.7:
-        concentration: 77.7
-        use_in_fit: true
-      Lib1-230614-monomeric_ACE2_233:
-        concentration: 233
-        use_in_fit: true
-  Lib2-230614-monomeric_ACE2:
-    neut_standard_name: neut_standard
-    prob_escape_filters: *prob_escape_filters_default
-    polyclonal_params: *ACE2_polyclonal_params_default
-    escape_plot_kwargs: *escape_plot_kwargs_default
-    plot_hide_stats: *ACE2_plot_hide_stats_default
-    no_antibody_sample: Lib2-230614-no-antibody_control_mediumACE2
-    antibody_samples:
-      Lib2-230614-monomeric_ACE2_2.88:
-        concentration: 2.88
-        use_in_fit: true
-      Lib2-230614-monomeric_ACE2_8.63:
-        concentration: 8.63
-        use_in_fit: true
-      Lib2-230614-monomeric_ACE2_25.9:
-        concentration: 25.9
-        use_in_fit: true
-      Lib2-230614-monomeric_ACE2_77.7:
-        concentration: 77.7
-        use_in_fit: true
-      Lib2-230614-monomeric_ACE2_233:
-        concentration: 233
-        use_in_fit: true
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging/plotting selections for same antibody or soluble ACE2
@@ -284,17 +227,3 @@ avg_antibody_escape:
     selections:
       - Lib1-230815-mAb-2E7_mediumACE2
       - Lib2-230815-mAb-2E7_mediumACE2
-
-# Define the ACE2 binding experiments to average
-avg_ACE2_binding_default: &avg_ACE2_binding_default
-  <<: *avg_antibody_escape_default
-  icXX: 50  # IC50
-
-avg_ACE2_binding:
-  monomeric_ACE2:
-    <<: *avg_ACE2_binding_default
-    title: binding for monomeric ACE2
-    plot_hide_stats: *ACE2_plot_hide_stats_default
-    selections:
-      - Lib1-230614-monomeric_ACE2
-      - Lib2-230614-monomeric_ACE2

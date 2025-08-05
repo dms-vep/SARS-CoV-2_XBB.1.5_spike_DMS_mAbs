@@ -44,3 +44,7 @@ The format is explained within the file.
 This same configuration can also be used to analyze escape from soluble receptor that inhibits entry to estimate how mutations affect receptor affinity.
 The configuration for such receptor-inhibition experiments are also specified in this configuration as conceptually the experiments and analysis are basically the same, with just how the results are plotted and described different.
 The format is explained within the file.
+
+## Pre-computed cell entry and receptor binding data
+
+[293T_high_ACE2_entry_func_effects.csv](293T_high_ACE2_entry_func_effects.csv) and [monomeric_ACE2_mut_effect.csv](monomeric_ACE2_mut_effect.csv) files contain pre-computed cell entry effect and ACE2 binding data, respectively. These data were previously published in [Dadonaite et al. 2024](https://www.nature.com/articles/s41586-024-07636-1).
